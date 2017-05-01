@@ -279,59 +279,13 @@ public class mspsReaderTool extends KeyAdapter implements ActionListener, Window
 				                		
 				                		
 				                		String[][] finalDataSheet = new String[rowNum][3];
-				                	//	String[][] superDataSheet = new String[rowNum][3];
 				                		int tempResource = 0;
 				                		double totalHrsByProject = 0.0;
 				                		String prevProjectName = "";
 				                		String prevResourceName = "";
-				                		/*for(int i=0;i<resourceDistinctData.length;i++)
-				                		{
-				                				for(int j=2;j<rowNum-1;j++)
-				                				{
-				                					
-				                					int p=2;
-				                					int h=9;
-				                					int r=1;
-				                					XSSFRow row = sheet.getRow(j);
-				                					XSSFCell cell=row.getCell(p);
-				                					XSSFCell cellResourceName=row.getCell(r);
-				                					//XSSFCell cellResourceNameCheck=row.getCell(r-1);
-				                					XSSFCell cellActualHours=row.getCell(h);
-				                					String currProjectName = cell.getStringCellValue();
-				                					String resourceName = cellResourceName.getStringCellValue();
-				                					double actualTemp=(double) cellActualHours.getNumericCellValue();
-				                					if (resourceName == resourceDistinctData[i])
-				                					{
-				                						if(actualTemp!=0.0)
-				                						{
-				                							if(prevProjectName == "" || currProjectName == prevProjectName)
-				                							{	
-				                							
-				                								prevProjectName=currProjectName;
-				                								prevResourceName = resourceName;
-				                								totalHrsByProject = totalHrsByProject + actualTemp;
-				                							}
-				                							else{
-				                								finalDataSheet[tempResource][0]= prevResourceName;
-				                								finalDataSheet[tempResource][1]= prevProjectName;
-				                								finalDataSheet[tempResource][2]= Double.toString(totalHrsByProject);
-				                								prevProjectName = "";
-				                								prevResourceName = "";
-				                								totalHrsByProject = 0.0;
-				                								tempResource++;
-				                								 j = j-1;
-				                							}				                						
-				                						}
-
-				                					}
-				                					
-				                				}
-				                				
-				                		}		// resource wise total sum
-*/				                		
+			                		
 				                		
 				                		String[][] finalDataSheetCheck = new String[rowNum][3];
-					                	//	String[][] superDataSheet = new String[rowNum][3];
 					                	int tempResourceCheck = 0;
 				                		double totalHrsByProjectCheck = 0.0;
 				                		String prevProjectNameCheck = "";
@@ -399,41 +353,7 @@ public class mspsReaderTool extends KeyAdapter implements ActionListener, Window
 		                	            	superDataSheet[i][1]=finalDataSheetCheck[i-1][1];
 		                	            	superDataSheet[i][2]=finalDataSheetCheck[i-1][2];
 				                	    }
-				                		System.out.println(superDataSheet.length);
-				                		/*double sum=0;
-				                		int countUnique =0;
-				                		for (int j = 0; j < 5; j++)
-				                	    {
-				                	        for (int k = j + 1; k < 15; k++) 
-				                	        {
-				                	            if (k != j && finalDataSheet[k][0] == finalDataSheet[j][0] && finalDataSheet[k][1] == finalDataSheet[j][1])
-				                	            {
-				                	                sum = sum + Double.parseDouble(finalDataSheet[k][2]);
-				                	                //System.out.println("Duplicate found: " + array[k] + " " + "Sum of the duplicate value is " + sum);
-				                	            }
-				                	            if (k != j && finalDataSheet[j][0] != finalDataSheet[k][0] && finalDataSheet[j][1] != finalDataSheet[k][1])
-				                	            {
-				                	            	superDataSheet[countUnique][0]=finalDataSheet[j][0];
-				                	            	superDataSheet[countUnique][1]=finalDataSheet[j][1];
-				                	            	superDataSheet[countUnique][2]=Double.toString(sum);
-				                	            	sum=0;
-				                	            	countUnique++;
-				                	            	
-				                	            }
-				                	        }
-				                	    }
-				                		
-				                		
-				                		for(int i=0;i<2;i++)
-				                		{
-				                			boolean b= superDataSheet[i][1].startsWith("SVT");
-				                			if(b==true)
-				                			{
-				                				System.out.println(superDataSheet[i][0]+"  "+superDataSheet[i][1]+"   "+superDataSheet[i][2]);
-				                			}
-				                		}
-				                		
-				                		*/
+				                		System.out.println(superDataSheet.length);			                		
 				                						                		
 				                		XSSFWorkbook workbook = new XSSFWorkbook();
 				                        XSSFSheet sheetWrite = workbook.createSheet("Java Books");
